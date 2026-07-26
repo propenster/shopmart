@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Mostpopular } from './mostpopular';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('Mostpopular', () => {
   let component: Mostpopular;
@@ -8,7 +9,8 @@ describe('Mostpopular', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Mostpopular]
+      imports: [Mostpopular],
+      providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 

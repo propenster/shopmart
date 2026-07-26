@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { of, Observable } from "rxjs"
 import { PRODUCTS, VEGGIES, JUICES, BEST_SELLERS, Product } from "../models/product";
 import { PRODUCT_CATEGORIES, ProductCategory } from '../models/product-category';
+import { POSTS, Post } from "../models/post";
+
 
 @Injectable({
   providedIn: 'root',
@@ -31,6 +33,10 @@ export class Api {
 
   getBestSellers(): Observable<Product[]> {
     return of(BEST_SELLERS);
+  }
+
+  getPosts(): Observable<Post[]> {
+    return of(POSTS);
   }
 
 

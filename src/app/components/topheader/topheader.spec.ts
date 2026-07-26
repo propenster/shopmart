@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Topheader } from './topheader';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('Topheader', () => {
   let component: Topheader;
@@ -8,7 +9,8 @@ describe('Topheader', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Topheader]
+      imports: [Topheader],
+      providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 

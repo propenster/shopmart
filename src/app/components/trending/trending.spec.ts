@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Trending } from './trending';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('Trending', () => {
   let component: Trending;
@@ -8,7 +9,8 @@ describe('Trending', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Trending]
+      imports: [Trending],
+      providers: [provideZonelessChangeDetection()]
     })
     .compileComponents();
 
@@ -20,4 +22,11 @@ describe('Trending', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render Trending products title', () => {
+    const fixture = TestBed.createComponent(Trending);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('h3')?.textContent).toContain('Trending Products');
+  })
 });
