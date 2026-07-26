@@ -22,4 +22,16 @@ describe('Popular', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render Popular products title', () => {
+    const fixture = TestBed.createComponent(Popular);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('h2')?.textContent).toContain('Most popular products');
+  }
+
+);
+
+
+
 });
